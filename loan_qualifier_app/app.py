@@ -7,6 +7,7 @@ Example:
     $ python app.py
 """
 import sys
+import csv
 import fire
 import questionary
 from pathlib import Path
@@ -103,6 +104,7 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
 
 
 def save_qualifying_loans(qualifying_loans):
+    #print(qualifying_loans)
     """Saves the qualifying loans to a CSV file.
 
     Args:
@@ -111,6 +113,22 @@ def save_qualifying_loans(qualifying_loans):
     # @TODO: Complete the usability dialog for savings the CSV Files.
     # YOUR CODE HERE!
 
+    header = ["Lender","Max Loan Amount","Max LTV","Max DTI","Min Credit Score","Interest Rate"]
+
+    csvpath = Path("my_output.csv")
+    with open(csvpath, 'w', newline='') as csvfile:
+        csvwriter = csv.writer(csvfile)
+
+        # Write our header row first!
+        csvwriter.writerow(header)
+        #print(header)
+
+        # Then we can write the data rows
+        for bank_data in qualifying_loans:
+            #print(bank_data)
+            csvwriter.writerow(bank_data)
+            
+    
 
 def run():
     """The main function for running the script."""
@@ -129,6 +147,6 @@ def run():
     # Save qualifying loans
     save_qualifying_loans(qualifying_loans)
 
-
 if __name__ == "__main__":
     fire.Fire(run)
+
