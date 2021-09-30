@@ -1,8 +1,10 @@
 # **Loan Qualifier Application**
 
-This purpose of this project is to develop an application that allows users to interact with the app to determine whether or not they are eligible for a loan and the details of the bank(s) that will allow them to take out a loan. 
+This purpose of this project is to develop an application that allows users to interact with the app to determine whether or not they are eligible for a loan and the details of the bank(s) that will allow them to take out a loan. Further, if the user wishes, it outputs a list of those banks and corresponding data to a csv file. 
 
-This will efficiently and quickly allow users who are looking to take out a loan to identify if they qualify for at least one loan and how many loans they qualify for as well as their DTI and LTV ratios. 
+In short, the app gives the user "the ability to save the qualifying loans to a CSV file so that they can share the results as a spreadsheet."
+
+This will efficiently and quickly allow users who are looking to take out a loan to identify the banks (if they qualify for at least one loan) that will provide them with the loan and the interest rate of the loan based on the user's financials. 
 
 ---
 
@@ -13,7 +15,19 @@ This program is written in python and uses the following libraries: pathlib (spe
 To run this application, there are multiple different functions running within the app some using modular programming to allow for an organized primary app. 
 The modules that the app is dependent on is qualifier which contains the following sub-modules: 
 * filters (which determine the user's loan eligibility based on their financials eg. credit score)
-* utils (which in turn contains 1. calculators for financial ratios and 2. fileio, a file that handles file input)
+* utils (which in turn contains 1. calculators for financial ratios and 2. fileio, a file that handles file input and output). 
+The output in utils is the csv file created by the save_csv function in the updated fileio module, which we modularized as follows:
+
+'''python
+def save_csv(csvpath, list_of_lists, header):
+
+    with open(csvpath, 'w', newline='') as csvfile:
+        csvwriter = csv.writer(csvfile)
+        csvwriter.writerow(header)
+        
+        for list in list_of_lists:
+            csvwriter.writerow(list)
+'''
 
 ---
 
@@ -36,7 +50,15 @@ git clone (paste ssh/https for Challenge_2 repo) and run the command.
 python app.py
 2. Follow the Command Line Interface prompts to enter the data requested: file path to the daily_rate_sheet, credit score, debt, income, loan amount and home value. 
 ![<Git Run Command and Prompts>](./RunCommand.png)
-3. The app will calculate your debt-to-income ratio, your loan-to-value ratio, and the number of loans you qualify for, and then exit.
+3. The app will calculate your debt-to-income ratio, your loan-to-value ratio, and the number of loans you qualify for.
+4. If you don't qualify for any loans, the application will notify you as such before exiting:
+Sorry! You have no qualifying loans. :(
+5. If you qualify for a loan(s) you have the option to save the details of the bank(s) willing to lend in a csv file.
+6. If you select YES, then it will prompt you to choose a filename where you would like to save the details of the banks willing to lend. 
+![<Save Loan CSV Prompts>](./SaveLoanPrompts.png)
+7. If you select an invalid filename, the application will notify you as such before exiting:
+Oops! Can't find this path: "path you entered"
+8. If you select NO, then the application will exit immediately.
 
 ---
 
