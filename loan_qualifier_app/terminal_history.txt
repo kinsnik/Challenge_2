@@ -1,0 +1,100 @@
+  420  cd ..
+  421  git clone git@github.com:kinsnik/Challenge_2.git
+  422  pwd
+  423  cd Challenge_2
+  424  pwd
+  425  ls
+  426  git status
+  427  ls
+  428  git status
+  429  git add loan_qualifier_app/
+  430  git status
+  431  git commit -m "Adding Project files for loan qualifier app"
+  432  git push 
+  433  source /Users/Nikki/opt/anaconda3/bin/activate
+  434  conda activate dev
+  435  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Workspace/questionary.py
+  436  python questionary.py
+  437  cd Desktop
+  438  cd Fintech_Workspace/
+  439  python questionary.py
+  440  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Workspace/questionary.py
+  441  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Workspace/questionary.py
+  442  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Workspace/questionary.py
+  443  conda deactivate
+  444  pip freeze
+  445  python questionary.py
+  446  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Workspace/questionary.py
+  447  python dialog.py
+  448  ls
+  449  cd 02_Adding_questionary_to_Loan_Qualifier/
+  450  ls
+  451  cd Unsolved
+  452  ls
+  453  python app.py --credit_score=750 --debt=5000 --income=20000
+  454  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Workspace/02_Adding_questionary_to_Loan_Qualifier/Unsolved/app.py
+  455  python app.py
+  456  python app.py
+  457  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Challenges/Challenge_2/loan_qualifier_app/app.py
+  458  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Challenges/Challenge_2/loan_qualifier_app/app.py
+  459  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Challenges/Challenge_2/loan_qualifier_app/app.py
+  460  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Challenges/Challenge_2/loan_qualifier_app/app.py
+  461  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Challenges/Challenge_2/loan_qualifier_app/app.py
+  462  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Challenges/Challenge_2/loan_qualifier_app/app.py
+  463  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Challenges/Challenge_2/loan_qualifier_app/app.py
+  464  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Challenges/Challenge_2/loan_qualifier_app/Write_Test.py
+  465  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Challenges/Challenge_2/loan_qualifier_app/Write_Test.py
+  466  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Challenges/Challenge_2/loan_qualifier_app/Write_Test.py
+  467  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Challenges/Challenge_2/loan_qualifier_app/Write_Test.py
+  468  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Challenges/Challenge_2/loan_qualifier_app/Write_Test.py
+  469  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Challenges/Challenge_2/loan_qualifier_app/Write_Test.py
+  470  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Challenges/Challenge_2/loan_qualifier_app/Write_Test.py
+  471  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Challenges/Challenge_1/loan_analyzer.py
+  472  cd ..
+  473  cd ..
+  474  cd ..
+  475  cd Fintech_Challenges/
+  476  cd Challenge_!
+  477  cd Challenge_1
+  478  ls
+  479  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Challenges/Challenge_1/loan_analyzer.py
+  480  ls
+  481  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Challenges/Challenge_2/loan_qualifier_app/Write_Test.py
+  482  cd ..
+  483  Challenge_2
+  484  cd Challenge_2
+  485  ls
+  486  cd loan_qualifier_app
+  487  ls
+  488  /Users/Nikki/opt/anaconda3/envs/dev/bin/python /Users/Nikki/Desktop/Fintech_Challenges/Challenge_2/loan_qualifier_app/Write_Test.py
+  489  ls
+  490  conda activate dev
+  491  cd Desktop/Fintech_Challenges/
+  492  ls
+  493  cd Challenge_2
+  494  ls
+  495  cd loan_qualifier_app/
+  496  git add app.py
+  497  git status
+  498  git commit -m "Modified file to include save_qualifying_loans function which sends qualifying loans to a csv file"
+  499  git push 
+  500  git pull https://github.com/kinsnik/Challenge_2.git
+  501  conda activate dev
+  502  cd Desktop
+  503  cd Fintech_Challenges
+  504  ls
+  505  cd Challenge_2
+  506  ls
+  507  cd loan_qualifier_app
+  508  ls
+  509  git add README.md
+  510  git status
+  511  git commit -m "README file for starter code in first git push"h
+  512  git push
+  513  git add README.md
+  514  git status
+  515  git add README.md
+  516  git status
+  517  git commit -m "README describing updated usage for modularized loan qualifier app with csv saving functionality" 
+  518  git push
+  519  history 100 > terminal_history.txt

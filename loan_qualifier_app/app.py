@@ -12,7 +12,10 @@ import fire
 import questionary
 from pathlib import Path
 
-from qualifier.utils.fileio import load_csv
+from questionary.constants import YES_OR_NO
+
+from qualifier.utils.fileio import load_csv, save_csv
+#from qualifier.utils.fileio import save_csv
 
 from qualifier.utils.calculators import (
     calculate_monthly_debt_ratio,
@@ -99,6 +102,10 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
     bank_data_filtered = filter_loan_to_value(loan_to_value_ratio, bank_data_filtered)
 
     print(f"Found {len(bank_data_filtered)} qualifying loans")
+    if len(bank_data_filtered) == 0:
+        sys.exit(f"Sorry! You have no qualifying loans. :(")
+        # This satisfies the second acceptance criterion: 
+        # Given that no qualifying loans exist, when prompting a user to save a file, then the program should notify the user and exit.
 
     return bank_data_filtered
 
@@ -115,7 +122,33 @@ def save_qualifying_loans(qualifying_loans):
 
     header = ["Lender","Max Loan Amount","Max LTV","Max DTI","Min Credit Score","Interest Rate"]
 
-    csvpath = Path("my_output.csv")
+    #csvpath = Path("my_output.csv")
+    save_or_no = questionary.text("Would you like to save your qualifying loans (YES or NO)?").ask(YES_OR_NO)
+    #This satisfies the first acceptance criterion: 
+    #Given that I’m using the loan qualifier CLI, when I run the qualifier, then the tool should prompt the user to save the results as a CSV file.
+
+
+    if save_or_no == "YES":
+    #This satisfies the third acceptance criterion:
+    #Given that I have a list of qualifying loans, when I’m prompted to save the results, then I should be able to opt out of saving the file.
+        csvpath = questionary.text("Where would you like to save your file (enter filepath)?").ask()
+        #This satisfies the fourth acceptance criterion:
+        #Given that I have a list of qualifying loans, when I choose to save the loans, the tool should prompt for a file path to save the file.
+        csvpath = Path(csvpath)
+        if not csvpath.exists():
+            sys.exit(f"Oops! Can't find this path: {csvpath}")
+
+        save_csv(csvpath,qualifying_loans,header)
+        # This satisfies the fifth acceptance criterion: 
+        # Given that I’m using the loan qualifier CLI, when I choose to save the loans, then the tool should save the results as a CSV file.
+
+        # Altogether, this satisfies the provided user story: 
+        # As a user, I need the ability to save the qualifying loans to a CSV file so that I can share the results as a spreadsheet.
+
+    else:
+        return
+
+"""
     with open(csvpath, 'w', newline='') as csvfile:
         csvwriter = csv.writer(csvfile)
 
@@ -127,6 +160,8 @@ def save_qualifying_loans(qualifying_loans):
         for bank_data in qualifying_loans:
             #print(bank_data)
             csvwriter.writerow(bank_data)
+"""
+
             
     
 

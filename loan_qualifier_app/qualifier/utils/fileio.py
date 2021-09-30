@@ -28,3 +28,25 @@ def load_csv(csvpath):
         for row in csvreader:
             data.append(row)
     return data
+
+
+
+def save_csv(csvpath, list_of_lists, header):
+    """Saves the qualifying loans to a CSV file.
+
+    Args:
+        qualifying_loans (list of lists): The qualifying bank loans.
+    """
+    # @TODO: Complete the usability dialog for savings the CSV Files.
+    # YOUR CODE HERE!
+
+    with open(csvpath, 'w', newline='') as csvfile:
+        csvwriter = csv.writer(csvfile)
+
+        # Write our header row first!
+        csvwriter.writerow(header)
+        
+
+        # Then we can write the data rows
+        for list in list_of_lists:
+            csvwriter.writerow(list)

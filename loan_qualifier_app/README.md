@@ -19,6 +19,7 @@ The modules that the app is dependent on is qualifier which contains the followi
 The output in utils is the csv file created by the save_csv function in the updated fileio module, which we modularized as follows:
 
 '''python
+
 def save_csv(csvpath, list_of_lists, header):
 
     with open(csvpath, 'w', newline='') as csvfile:
