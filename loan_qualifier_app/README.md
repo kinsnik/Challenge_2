@@ -18,7 +18,7 @@ The modules that the app is dependent on is qualifier which contains the followi
 * utils (which in turn contains 1. calculators for financial ratios and 2. fileio, a file that handles file input and output). 
 The output in utils is the csv file created by the save_csv function in the updated fileio module, which we modularized as follows:
 
-'''python
+```python
 
     def save_csv(csvpath, list_of_lists, header):
 
@@ -28,18 +28,21 @@ The output in utils is the csv file created by the save_csv function in the upda
         
             for list in list_of_lists:
             csvwriter.writerow(list)
-'''
+```
 
 ---
 
 ## **Installation Guide**
 
 1. First you would want to navigate to GitHub to the Challenge_2 repository and click on the green Code button which allows you to clone the repository. 
+
 ![<Green Code button in GitHub>](./Screenshots/GitHub_Code.png)
 2. Once clicking on either SSH or HTTPS as a clone method, it automatically copies the link. You will then navigate to the Terminal or GitBash and type 
 git clone (paste ssh/https for Challenge_2 repo) and run the command. 
+
 ![<SSH or HTTPS Option for Cloning Repo>](./Screenshots/GitHub_SSH_HTTPS.png)
 3. Once complete, you can use the "git pull" command in Terminal or GitBash to pull the repository from the remote repository to a local directory of your choice. 
+
 ![<Git Pull Command>](./Screenshots/GitPull.png)
 4. Now you should have access to the application (app.py) as well as other files within the repository upon which app.py depends for the functions. 
 
@@ -50,12 +53,14 @@ git clone (paste ssh/https for Challenge_2 repo) and run the command.
 1. Upon installing app.py and other files by pulling the repo, you would want to navigate to the Terminal or Git Bash and run the following command: 
 python app.py
 2. Follow the Command Line Interface prompts to enter the data requested: file path to the daily_rate_sheet, credit score, debt, income, loan amount and home value. 
+
 ![<Git Run Command and Prompts>](./Screenshots/RunCommand.png)
 3. The app will calculate your debt-to-income ratio, your loan-to-value ratio, and the number of loans you qualify for.
 4. If you don't qualify for any loans, the application will notify you as such before exiting:
 Sorry! You have no qualifying loans. :(
 5. If you qualify for a loan(s) you have the option to save the details of the bank(s) willing to lend in a csv file.
 6. If you select YES, then it will prompt you to choose a filename where you would like to save the details of the banks willing to lend. 
+
 ![<Save Loan CSV Prompts>](./Screenshots/SaveLoanPrompts.png)
 7. If you select an invalid filename, the application will notify you as such before exiting:
 Oops! Can't find this path: "path you entered"
