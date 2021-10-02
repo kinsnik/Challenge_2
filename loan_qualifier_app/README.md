@@ -20,13 +20,13 @@ The output in utils is the csv file created by the save_csv function in the upda
 
 '''python
 
-def save_csv(csvpath, list_of_lists, header):
+    def save_csv(csvpath, list_of_lists, header):
 
-    with open(csvpath, 'w', newline='') as csvfile:
+        with open(csvpath, 'w', newline='') as csvfile:
         csvwriter = csv.writer(csvfile)
         csvwriter.writerow(header)
         
-        for list in list_of_lists:
+            for list in list_of_lists:
             csvwriter.writerow(list)
 '''
 
